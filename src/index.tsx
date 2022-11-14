@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals'
 import MainSlide from './features/MainSlide/MainSlide'
 
 import 'bootstrap/dist/css/bootstrap.css'
-import './fonts/montserrat.css'
 
 import './styles/app.sass'
 
