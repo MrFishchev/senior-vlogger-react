@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './AboutMe.sass'
 
 import { ReactComponent as ScaleIcon } from './icons/scale.svg'
@@ -7,6 +7,8 @@ import { ReactComponent as SpeedIcon } from './icons/speed.svg'
 import { ReactComponent as ResponsiveIcon } from './icons/responsive.svg'
 
 const AboutMe: React.FC = () => {
+  const [messageLength, setMessageLength] = useState(0)
+  const messageMaxLength = 300
   return (
     <div className="about-me wrapper container-fluid">
       <div className="content">
@@ -144,12 +146,11 @@ const AboutMe: React.FC = () => {
                 <br />
               </div>
               <div className="desc">
-                {`
-                    Hi Friend! I'm a <strong>Senior Software Engineer</strong>.
-                    Now I'm on my way to becoming a Software Architect. Let's make
-                    the World a better place. If you want to know about me or
-                    <strong>.NET</strong>, then welcome to my <a>blog</a>.
-                 `}
+                Hi Friend! I&apos;m a <strong>Senior Software Engineer</strong>.
+                Now I&apos;m on my way to becoming a Software Architect.
+                Let&apos;s make the World a better place. If you want to know
+                about me or
+                <strong>.NET</strong>, then welcome to my <a>blog</a>.
               </div>
             </div>
 
@@ -157,8 +158,15 @@ const AboutMe: React.FC = () => {
               <form>
                 <input type="text" name="subject" placeholder="Subject" />
                 <input type="email" name="email" placeholder="Email" />
-                <textarea name="message" placeholder="Message" />
-                <div className="remaining">Remaining message length</div>
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  maxLength={messageMaxLength}
+                  onChange={(e) => setMessageLength(e.target.value.length)}
+                />
+                <div className="remaining">
+                  {messageMaxLength - messageLength}
+                </div>
                 <button type="submit" className="btn w-100">
                   Go to know
                 </button>
