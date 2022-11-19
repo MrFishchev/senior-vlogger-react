@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import reportWebVitals from './reportWebVitals'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import MainSlide from './features/MainSlide/MainSlide'
+import AboutMe from './features/AboutMe/AboutMe'
 
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -12,7 +14,12 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 document.body.classList.add('dark')
 root.render(
   <React.StrictMode>
-    <MainSlide />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainSlide />} />
+        <Route path="/about" element={<AboutMe />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 )
 

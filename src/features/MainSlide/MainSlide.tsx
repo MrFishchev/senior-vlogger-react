@@ -1,5 +1,6 @@
 import React from 'react'
 import './MainSlide.sass'
+import { Link } from 'react-router-dom'
 
 import Html5 from './icons/html-5.svg'
 import Angular from './icons/angularjs.svg'
@@ -29,12 +30,16 @@ const MainSlide: React.FC = () => {
         <h1>Mr. Fishchev</h1>
         <h3 className="job">Senior Software Engineer</h3>
         <div className="routes">
-          <button type="button" className="btn btn-lg">
-            Blog
-          </button>
-          <button type="button" className="btn btn-lg">
-            About
-          </button>
+          <Link to="/blog">
+            <button type="button" className="btn btn-lg">
+              Blog
+            </button>
+          </Link>
+          <Link to="/about">
+            <button type="button" className="btn btn-lg">
+              About
+            </button>
+          </Link>
         </div>
       </div>
       <div className="icons">
