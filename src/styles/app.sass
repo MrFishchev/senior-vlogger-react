@@ -1,5 +1,6 @@
 @import '_colors'
 @import '_animations'
+@import '_media'
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700')
 
 input[type="email"],
@@ -64,7 +65,7 @@ body
         font-weight: 400
         border: 1px solid var(--base-light)
         transition: all 0.5s
-        &:hover, &:active
+        &:hover, &:active, &:focus
             background: var(--neon-light)
             border-color: #0f7dbd
 a
@@ -73,5 +74,3 @@ a
     &:hover
         text-decoration: underline
         text-decoration-style: dotted
-
-@import '_media'
