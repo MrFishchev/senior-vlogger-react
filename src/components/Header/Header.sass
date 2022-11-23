@@ -1,0 +1,63 @@
+header.wrapper
+    min-width: 320px
+    height: 50px
+    background: var(--base-dark)
+    border-bottom: 3px solid var(--neon-light)
+    position: fixed
+    top: 0
+    width: 100vw
+    z-index: 100
+    display: flex
+    align-items: center
+    a
+        color: #fff
+    .container
+        display: flex
+        justify-content: space-between
+        max-width: 1080px
+        padding: 0
+    nav
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        .container
+            align-items: center
+            display: flex
+            padding: 0
+        ul
+            width: 100%
+            margin: 0
+            padding: 0
+            li
+                display: inline-block
+                margin-left: 2vw
+            a
+                text-decoration: none
+                font-size: 1rem
+                text-transform: uppercase
+                cursor: pointer
+                transition: color 0.5s
+                &.exact-active-route, &.active
+                    color: var(--neon-light)
+                &:hover
+                    color: var(--neon-light)
+            li:first-child
+                margin: 0
+    .manage
+        color: var(--font-white)
+        a
+            color: var(--font-white)
+            text-decoration: none
+            transition: color 0.3s
+            margin-left: 2vw
+        &:first-child
+            margin-right: 1vw
+        &:hover
+            color: var(--neon-light)
+        .light-mode
+            font-size: 1.563rem
+            color: var(--font-white)
+        &:hover
+            color: var(--neon-light)
+            cursor: pointer
+            transition: color 0.3s
