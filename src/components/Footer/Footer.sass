@@ -1,0 +1,49 @@
+footer.wrapper
+    padding: 70px 0 50px 0
+    background: var(--base-dark)
+    position: relative
+    .btn
+        position: absolute
+        height: 40px
+        top: -20px
+        width: 160px
+        left: calc( 50% - 80px)
+        background-image: linear-gradient(to right,var(--neon-light),var(--neon))
+        background-size: 200% auto
+        border-radius: 0
+        border: none
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        transition: color 0.2s
+        &:hover
+            border: none
+            background: var(--font-white)
+            color: var(--neon-light)
+    .icon-wrapper
+        display: flex
+        justify-content: center
+        .icon
+            margin-right: 2vw
+            div
+                width: 55px
+                height: 55px
+                background: var(--base)
+                transition: background 0.5s
+                padding: 15px
+                svg
+                    fill: var(--font-white)
+            &:last-child
+                margin: 0
+            &:hover > div
+                background: var(--neon-light)
+    .copyright
+        margin-top: 1.5vw
+        text-transform: uppercase
+        color: var(--font)
+        font-weight: 200
+        font-size: 12px
+        text-align: center
+        opacity: 0.7
+        span
+            color: var(--neon-light)
