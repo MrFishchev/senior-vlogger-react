@@ -1,0 +1,3 @@
+[submodule "senior-vlogger-be"]
+	path = senior-vlogger-be
+	url = https://github.com/MrFishchev/senior-vlogger-be.git
