@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import MainSlide from './features/MainSlide/MainSlide'
 import AboutMe from './features/AboutMe/AboutMe'
+import Blog from './features/Blog/Blog'
 import NotFound from './features/NotFound/NotFound'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -20,6 +21,7 @@ root.render(
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<MainSlide />} />
         <Route path="/about" element={<AboutMe />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
