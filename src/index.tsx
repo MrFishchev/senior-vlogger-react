@@ -7,9 +7,10 @@ import MainSlide from './features/MainSlide/MainSlide'
 import AboutMe from './features/AboutMe/AboutMe'
 import Blog from './features/Blog/Blog'
 import NotFound from './features/NotFound/NotFound'
+import Manage from './features/Manage/Manage'
 
-import 'bootstrap/dist/css/bootstrap.css'
-
+import 'bootswatch/dist/flatly/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 import './styles/app.sass'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
@@ -22,6 +23,7 @@ root.render(
         <Route path="/" element={<MainSlide />} />
         <Route path="/about" element={<AboutMe />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/manage" element={<Manage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
