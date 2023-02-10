@@ -1,6 +1,6 @@
 import Category from './Category'
 
-export default interface ShortPost {
+export default interface PostBase {
   id: number
   title: string
   slug: string

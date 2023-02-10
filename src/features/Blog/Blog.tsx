@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './Blog.sass'
 import Page from '../../components/Page/Page'
-import ShortPost from '../../types/ShortPost'
+import PostBase from '../../types/PostBase'
 import PostService from '../../services/PostService'
 import BlogPostShort from '../../components/BlogPostShort/BlogPostShort'
 
 const Blog: React.FC = () => {
-  const [posts, setPosts] = useState<ShortPost[]>([])
+  const [posts, setPosts] = useState<PostBase[]>([])
   const postService = new PostService()
 
   useEffect(() => {

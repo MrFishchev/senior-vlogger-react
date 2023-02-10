@@ -8,6 +8,7 @@ import AboutMe from './features/AboutMe/AboutMe'
 import Blog from './features/Blog/Blog'
 import NotFound from './features/NotFound/NotFound'
 import Manage from './features/Manage/Manage'
+import CreatePost from './features/Manage/CreatePost/CreatePost'
 
 import 'bootswatch/dist/flatly/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
@@ -23,7 +24,10 @@ root.render(
         <Route path="/" element={<MainSlide />} />
         <Route path="/about" element={<AboutMe />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/manage" element={<Manage />} />
+        <Route path="/manage">
+          <Route index element={<Manage />} />
+          <Route path="posts/create" element={<CreatePost />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

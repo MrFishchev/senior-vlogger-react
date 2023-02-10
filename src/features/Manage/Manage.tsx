@@ -12,10 +12,10 @@ import {
 import BaseDataTable from '../../components/BaseDataTable/BaseDataTable'
 import { TableColumn } from 'react-data-table-component'
 import PostService from '../../services/PostService'
-import ShortPost from '../../types/ShortPost'
+import PostBaseType from '../../types/PostBase'
 
 const Blog: React.FC = () => {
-  const [posts, setPosts] = useState<ShortPost[]>([])
+  const [posts, setPosts] = useState<PostBaseType[]>([])
   const postService = new PostService()
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Blog: React.FC = () => {
     }
   }, [])
 
-  const columns: Array<TableColumn<ShortPost>> = [
+  const columns: Array<TableColumn<PostBaseType>> = [
     {
       name: 'Title',
       selector: (row) => row.title
