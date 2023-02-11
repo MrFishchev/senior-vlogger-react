@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './CreatePost.sass'
 import ManagePage from '../../../components/ManagePage/ManagePage'
 import Category from '../../../types/Category'
@@ -52,11 +52,6 @@ const CreatePost: React.FC = () => {
   const [editorData, setEditorData] = useState<string | undefined>(
     '**Hello world!!!**'
   )
-
-  useEffect(() => {
-    document.body.classList.remove('dark')
-    document.body.classList.add('light')
-  }, [])
 
   const savePost = async (
     e: React.FormEvent<HTMLFormElement>

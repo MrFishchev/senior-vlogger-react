@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Blog.sass'
-import Page from '../../components/Page/Page'
+import BlogPage from '../../components/BlogPage/BlogPage'
 import PostBase from '../../types/PostBase'
 import PostService from '../../services/PostService'
 import BlogPostShort from '../../components/BlogPostShort/BlogPostShort'
@@ -10,27 +10,21 @@ const Blog: React.FC = () => {
   const postService = new PostService()
 
   useEffect(() => {
-    document.body.classList.remove('dark')
-    document.body.classList.add('light')
-
-    const fetchPosts = async (): Promise<void> => {
-      setPosts(await postService.getAll())
-    }
     fetchPosts().catch(console.error)
-
-    return () => {
-      document.body.classList.remove('light')
-    }
   }, [])
 
+  const fetchPosts = async (): Promise<void> => {
+    setPosts(await postService.getAll())
+  }
+
   return (
-    <Page>
+    <BlogPage>
       <div className="blog">
         {posts.map((post, i) => (
           <BlogPostShort data={post} key={i} />
         ))}
       </div>
-    </Page>
+    </BlogPage>
   )
 }
 

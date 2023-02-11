@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './AboutMe.sass'
-import Page from '../../components/Page/Page'
+import AboutPage from '../../components/AboutPage/AboutPage'
 
 import { ReactComponent as ScaleIcon } from './icons/scale.svg'
 import { ReactComponent as CleanIcon } from './icons/clean.svg'
@@ -11,7 +11,7 @@ const AboutMe: React.FC = () => {
   const [messageLength, setMessageLength] = useState(0)
   const messageMaxLength = 300
   return (
-    <Page>
+    <AboutPage>
       <div className="about-me wrapper container-fluid">
         <div className="content">
           {/* About */}
@@ -179,7 +179,7 @@ const AboutMe: React.FC = () => {
           {/* End Contact */}
         </div>
       </div>
-    </Page>
+    </AboutPage>
   )
 }
 

@@ -19,18 +19,12 @@ const Blog: React.FC = () => {
   const postService = new PostService()
 
   useEffect(() => {
-    document.body.classList.remove('dark')
-    document.body.classList.add('light')
-
-    const fetchPosts = async (): Promise<void> => {
-      setPosts(await postService.getAll())
-    }
     fetchPosts().catch(console.error)
-
-    return () => {
-      document.body.classList.remove('light')
-    }
   }, [])
+
+  const fetchPosts = async (): Promise<void> => {
+    setPosts(await postService.getAll())
+  }
 
   const columns: Array<TableColumn<PostBaseType>> = [
     {

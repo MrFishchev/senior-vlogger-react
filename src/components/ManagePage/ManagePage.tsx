@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const ManagePage: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  useEffect(() => {
+    document.body.classList.remove('dark')
+    document.body.classList.add('light')
+
+    return () => {
+      document.body.classList.remove('light')
+    }
+  }, [])
+
   return (
     <div className="manage-layout">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
