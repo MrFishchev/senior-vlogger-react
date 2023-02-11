@@ -1,7 +1,7 @@
 import Category from './Category'
 
 export default interface PostBase {
-  id: number
+  id: string
   title: string
   slug: string
   category: Category

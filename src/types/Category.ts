@@ -1,6 +1,6 @@
 enum Category {
-  Development,
-  Life
+  Development = 'Development',
+  Life = 'Life'
 }
 
 export default Category

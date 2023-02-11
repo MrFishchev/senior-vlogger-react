@@ -2,6 +2,7 @@ import React from 'react'
 import './BlogPostShort.sass'
 import { NavLink } from 'react-router-dom'
 import PostBase from '../../types/PostBase'
+import Category from '../../types/Category'
 
 const BlogPostShort: React.FC<{ data: PostBase }> = ({ data }) => {
   return (
@@ -10,7 +11,7 @@ const BlogPostShort: React.FC<{ data: PostBase }> = ({ data }) => {
         className="category slide-in-left"
         to={`/blog/category/${data.category}`}
       >
-        {data.category}
+        {Category[data.category]}
       </NavLink>
 
       <h1 className="title slide-in-right">
