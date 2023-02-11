@@ -9,14 +9,14 @@ import { ReactComponent as GithubIcon } from './icons/github.svg'
 const Footer: React.FC<{ isBlogLayout: boolean }> = ({ isBlogLayout }) => {
   return (
     <footer className="wrapper">
-      {isBlogLayout && (
+      {!isBlogLayout && (
         <NavLink to="/blog">
           <button type="button" className="btn">
             Read Blog
           </button>
         </NavLink>
       )}
-      {!isBlogLayout && <button className="btn">Subscribe</button>}
+      {isBlogLayout && <button className="btn">Subscribe</button>}
 
       <div className="icon-wrapper">
         <a
