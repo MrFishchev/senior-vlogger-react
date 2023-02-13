@@ -65,14 +65,11 @@ const CreatePost: React.FC = () => {
     }
 
     const imageKey = await storageService.saveFileToS3(selectedFile as File)
-    console.log(`Saved image: ${imageKey}`)
 
     post.imageUrl = `${STORAGE_BUCKET_URL}/${imageKey}`
     post.content = editorData ?? ''
-    console.debug(post)
 
     await postService.create(post)
-    console.log('Post is created')
   }
 
   return (
