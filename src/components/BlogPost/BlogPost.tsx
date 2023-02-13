@@ -5,6 +5,7 @@ import Post from '../../types/Post'
 import BlogPage from '../BlogPage/BlogPage'
 import PostService from '../../services/PostService'
 import moment from 'moment'
+import MDEditor from '@uiw/react-md-editor'
 
 const BlogPost: React.FC = () => {
   const { slug } = useParams()
@@ -48,8 +49,12 @@ const BlogPost: React.FC = () => {
 
           <img src={post.imageUrl} alt="" className="image appears-fadein" />
 
-          <div id="content" className="appears-fadein">
-            {post.content}
+          <div id="content" className="appears-fadein" data-color-mode="light">
+            <div className="wmde-markdown-var"> </div>
+            <MDEditor.Markdown
+              source={post.content}
+              style={{ whiteSpace: 'pre-wrap' }}
+            />
           </div>
 
           <div className="tags">

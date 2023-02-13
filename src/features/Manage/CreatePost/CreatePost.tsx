@@ -211,10 +211,7 @@ const CreatePost: React.FC = () => {
 
             <div className="preview" data-color-mode="light">
               <div className="wmde-markdown-var"> </div>
-              <MDEditor.Markdown
-                source={editorData}
-                style={{ whiteSpace: 'pre-wrap' }}
-              />
+              <MDEditor.Markdown source={editorData} />
             </div>
 
             <div className="buttons mb-5">
