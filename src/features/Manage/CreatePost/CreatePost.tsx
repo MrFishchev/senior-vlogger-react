@@ -9,6 +9,9 @@ import Post from '../../../types/Post'
 import StorageService from '../../../services/StorageService'
 import PostService from '../../../services/PostService'
 
+// HOW TO UPLOAD IMAGES WITH MD EDITOR
+// https://github.com/uiwjs/react-md-editor/issues/83
+
 type PostInputTypes = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
 const STORAGE_BUCKET_URL = process.env.REACT_APP_STORAGE_BUCKET_URL ?? ''
 
@@ -22,9 +25,8 @@ const CreatePost: React.FC = () => {
     .map((value) => value as string)
 
   const defaultPost: Post = {
-    id: '',
     title: 'My new post title',
-    slug: 'my-new-post-title',
+    slug: '',
     category: Category.Development,
     tags: ['Random', 'Test'],
     imageUrl:

@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MainSlide from './features/MainSlide/MainSlide'
 import AboutMe from './features/AboutMe/AboutMe'
 import Blog from './features/Blog/Blog'
+import BlogPost from './components/BlogPost/BlogPost'
 import NotFound from './features/NotFound/NotFound'
 import Manage from './features/Manage/Manage'
 import CreatePost from './features/Manage/CreatePost/CreatePost'
@@ -23,7 +24,10 @@ root.render(
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<MainSlide />} />
         <Route path="/about" element={<AboutMe />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog">
+          <Route index element={<Blog />} />
+          <Route path=":slug" element={<BlogPost />} />
+        </Route>
         <Route path="/manage">
           <Route index element={<Manage />} />
           <Route path="posts/create" element={<CreatePost />} />
